@@ -10,20 +10,13 @@ import { RouterView } from 'vue-router'
         Book Recommender System
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn 
-        variant="text" 
+      <v-btn
+        variant="text"
         :to="{ name: 'home' }"
         exact
       >
         <v-icon left>mdi-home</v-icon>
         Home
-      </v-btn>
-      <v-btn 
-        variant="text" 
-        :to="{ name: 'about' }"
-      >
-        <v-icon left>mdi-information</v-icon>
-        About
       </v-btn>
     </v-app-bar>
 

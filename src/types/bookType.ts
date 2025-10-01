@@ -11,4 +11,5 @@ export interface Book {
 
 export interface BookWithRating extends Book {
   "Book-Rating": string
+  "predicted_rating"?: number
 }

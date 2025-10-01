@@ -8,6 +8,7 @@
       <p><strong>Publisher:</strong> {{ props.book['Publisher'] }}</p>
       <p><strong>ISBN:</strong> {{ props.book['ISBN'] }}</p>
       <p><strong>Rating:</strong> {{ props.book['Book-Rating'] }}</p>
+      <p v-if="props.book['predicted_rating']"><strong>Predicted Rating:</strong> {{ props.book['predicted_rating'] }}</p>
     </div>
   </div>
 </template>

@@ -5,6 +5,8 @@
       <SelectAUser v-if="currentStep === 1" @next-step="currentStep++" />
       <SelectARS v-if="currentStep === 2" @next-step="currentStep++" @selected-rs="handleSelectedRS" />
       <TopPopularityRS v-if="currentStep === 3 && selectedRecommenderSystem === '1'" />
+      <UserBasedCFRS v-if="currentStep === 3 && selectedRecommenderSystem === '2'" />
+      <ItemBasedCFRS v-if="currentStep === 3 && selectedRecommenderSystem === '3'" />
     </div>
   </div>
 </template>
@@ -13,6 +15,8 @@
 import SelectARS from '@/components/SelectARS.vue';
 import SelectAUser from '@/components/SelectAUser.vue';
 import TopPopularityRS from '@/components/TopPopularityRS.vue';
+import UserBasedCFRS from '@/components/UserBasedCFRS.vue';
+import ItemBasedCFRS from '@/components/ItemBasedCFRS.vue';
 import { ref } from 'vue';
 
 const currentStep = ref(1);

@@ -5,7 +5,7 @@
     <div v-if="loading">Loading...</div>
     <div v-else>
     <ul v-if="books.length">
-      <div v-for="book in books" :key="book.id" class="book-item">
+      <div v-for="book in books" :key="book.ISBN" class="book-item">
         <BookCard :book="book" />
       </div>
     </ul>

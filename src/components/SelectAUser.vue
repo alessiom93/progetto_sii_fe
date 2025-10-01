@@ -42,7 +42,7 @@ import { getFiveRandomUsersWithBooks } from "@/connectors/commonConnector";
 import { ref } from "vue";
 import BookCard from "./BookCard.vue";
 
-const emit = defineEmits(['next-step']);
+const emit = defineEmits(['next-step', 'selected-user']);
 
 const selectedUserId = ref('null');
 const users = ref([]);
@@ -62,6 +62,7 @@ async function getFiveRandomUsers() {
 function nextStep() {
   // Send event to parent component to go to next step
   emit("next-step");
+  emit("selected-user", selectedUserId.value);
 }
 </script>
 

@@ -25,9 +25,13 @@ import type { BookWithRating } from '@/types/bookType';
 const books = ref<BookWithRating[]>([]);
 const loading = ref(false);
 
+const props = defineProps<{
+  selectedUser: string | null;
+}>();
+
 onMounted(async () => {
   loading.value = true;
-  books.value = await getItemBasedCFRSRecommendations('user-id');
+  books.value = await getItemBasedCFRSRecommendations(props.selectedUser!);
   console.log('Book response:', books.value);
   loading.value = false;
 });

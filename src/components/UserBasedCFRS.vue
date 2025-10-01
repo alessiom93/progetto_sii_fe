@@ -1,6 +1,6 @@
 <template>
-  <div class="top-popularity-rs">
-    <h1>Top Popularity Recommender System</h1>
+  <div class="user-based-cf-rs">
+    <h1>User Based Collaborative Filtering Recommender System</h1>
     <h2>Top 10 Recommended Books</h2>
     <div v-if="loading">Loading...</div>
     <div v-else>
@@ -19,7 +19,7 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 import BookCard from './BookCard.vue';
-import { getTopPopularityRSRecommendations } from '@/connectors/commonConnector';
+import { getUserBasedCFRSRecommendations } from '@/connectors/commonConnector';
 import type { BookWithRating } from '@/types/bookType';
 
 const books = ref<BookWithRating[]>([]);
@@ -27,7 +27,7 @@ const loading = ref(false);
 
 onMounted(async () => {
   loading.value = true;
-  books.value = await getTopPopularityRSRecommendations('user-id');
+  books.value = await getUserBasedCFRSRecommendations('user-id');
   console.log('Book response:', books.value);
   loading.value = false;
 });
@@ -36,7 +36,7 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-.top-popularity-rs {
+.user-based-cf-rs {
   max-width: 500px;
   margin: 2rem auto;
   padding: 1rem;

@@ -48,3 +48,15 @@ export async function getTopPopularityRSRecommendations(userId: string) {
   return (await connector.fetchData('/get_top_popularity_rs', { user_id: userId }))
     .top_10_books;
 }
+
+export async function getUserBasedCFRSRecommendations(userId: string) {
+  const connector = new CommonConnector();
+  return (await connector.fetchData('/get_user_based_cf_rs', { user_id: userId }))
+    .top_10_books;
+}
+
+export async function getItemBasedCFRSRecommendations(userId: string) {
+  const connector = new CommonConnector();
+  return (await connector.fetchData('/get_item_based_cf_rs', { user_id: userId }))
+    .top_10_books;
+}

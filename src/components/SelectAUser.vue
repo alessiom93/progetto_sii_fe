@@ -9,7 +9,11 @@
         v-for="user in users"
         :key="user['User-ID']"
         class="user-card"
+<<<<<<< HEAD
         @click="selectUser(user['User-ID'].toString())"
+=======
+        @click="selectUser(user['User-ID'])"
+>>>>>>> 2afbc077706a600c093148b705a0b9538988094f
       >
         <h2>{{ user['User-ID'] }}</h2>
         <p><strong>Location:</strong> {{ user['Location'] }}</p>
@@ -45,6 +49,7 @@ import BookCard from "./BookCard.vue";
 const emit = defineEmits(['next-step', 'selected-user']);
 
 const selectedUserId = ref('null');
+<<<<<<< HEAD
 const users = ref(
   [
     {
@@ -359,6 +364,9 @@ const users = ref(
     }
 ]
 );
+=======
+const users = ref([]);
+>>>>>>> 2afbc077706a600c093148b705a0b9538988094f
 const buttonLoading = ref(false);
 
 function selectUser(userId: string) {

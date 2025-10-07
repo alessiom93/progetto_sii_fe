@@ -43,15 +43,9 @@ export async function getRecommenderSystemsInfos() {
   return (await connector.fetchData('/getRecommenderSystemsInfos')).recommender_systems;
 }
 
-<<<<<<< HEAD
 export async function getTopPopularityRSRecommendations() {
   const connector = new CommonConnector();
   return (await connector.fetchData('/get_top_popularity_rs'))
-=======
-export async function getTopPopularityRSRecommendations(userId: string) {
-  const connector = new CommonConnector();
-  return (await connector.fetchData('/get_top_popularity_rs', { user_id: userId }))
->>>>>>> 2afbc077706a600c093148b705a0b9538988094f
     .top_10_books;
 }
 

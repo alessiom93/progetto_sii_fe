@@ -7,6 +7,7 @@
       <TopPopularityRS v-if="currentStep === 3 && selectedRecommenderSystem === '1'" />
       <UserBasedCFRS v-if="currentStep === 3 && selectedRecommenderSystem === '2' && selectedUser" :selectedUser="selectedUser" />
       <ItemBasedCFRS v-if="currentStep === 3 && selectedRecommenderSystem === '3' && selectedUser" :selectedUser="selectedUser"/>
+      <UserVsItem v-if="currentStep === 3 && selectedRecommenderSystem === '4'"/>
     </div>
   </div>
 </template>
@@ -18,6 +19,7 @@ import TopPopularityRS from '@/components/TopPopularityRS.vue';
 import UserBasedCFRS from '@/components/UserBasedCFRS.vue';
 import ItemBasedCFRS from '@/components/ItemBasedCFRS.vue';
 import { ref } from 'vue';
+import UserVsItem from '@/components/UserVsItem.vue';
 
 const currentStep = ref(1);
 const selectedUser = ref<string | null>(null);

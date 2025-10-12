@@ -60,3 +60,9 @@ export async function getItemBasedCFRSRecommendations(userId: string) {
   return (await connector.fetchData('/get_item_based_cf_rs', { user_id: userId }))
     .top_10_books;
 }
+
+export async function getUserVsItemCFRSComparison() {
+  const connector = new CommonConnector();
+  return (await connector.fetchData('/user_vs_item'))
+    .metrics;
+}

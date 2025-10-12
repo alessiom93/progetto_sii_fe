@@ -12,8 +12,7 @@ import { RouterView } from 'vue-router'
       <v-spacer></v-spacer>
       <v-btn
         variant="text"
-        :to="{ name: 'home' }"
-        exact
+        @click="$router.go(0)"
       >
         <v-icon left>mdi-home</v-icon>
         Home
@@ -27,7 +26,7 @@ import { RouterView } from 'vue-router'
     <v-footer app color="primary" dark>
       <v-spacer></v-spacer>
       <div class="text-center">
-        &copy; {{ new Date().getFullYear() }} - University Book Recommendation System
+        &copy; {{ new Date().getFullYear() }} - University Book Recommendation Systems
       </div>
       <v-spacer></v-spacer>
     </v-footer>
